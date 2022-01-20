@@ -13,7 +13,7 @@ public class ArraysOperation2 {
        int numOfElements = 0;
 
     }
-
+//**********************************************************************************
     public int addElement(int e) {
         if (numOfElements < x.length) {
             x[numOfElements] = e;
@@ -22,7 +22,23 @@ public class ArraysOperation2 {
         }
         return -1;
     }
-
+//*************************************************************************************
+        public int addSortedElement(int e) 
+    {
+        if (numOfElements < x.length) 
+    {
+            int i = numOfElements;
+            while (i > 0 && e < x[i - 1]) {
+                x[i] = e[i-1];
+                i--;
+   }
+            a[i]=e;
+                numOfElements++;
+            return 0;
+      else
+            return -1;
+  }
+//**************************************************************************************
     public static void main(String[] args) {
         ArraysOperation2 test = new ArraysOperation2();
         Scanner in = new Scanner(System.in);
@@ -32,22 +48,25 @@ public class ArraysOperation2 {
         for (int i = 0; i < 7; i++) {
             // if (test.addElement(in.nextInt())==0)
             if (test.addSortedElement(in.nextInt()) == 0)
-
+            {
                 System.out.println("added sucessfully");
             else
                 System.out.println("array is full");
             System.out.println(Arrays.toString(test.x));
-        }
-    }
+           } }
+  
+   //****************************************************************************************
+      public int deleteElement()
+{
+    if(numOfElements>0)
+  {
+        a[numOfElements-1]=Interger.MIN_VALUE;
+        numOfElements--;
+             return 0;
+         else
+              return -1;
+  }}
+        
 
-    public int addSortedElement(int e) {
-        if (numOfElements < x.length) {
-            int i = numOfElements;
-            while (i > 0 && e < x[i - 1]) {
-                x[i] = e;
-                numOfElements++;
-            }
-            return 0;
-        }
         return -1;
-    }
+    }}
